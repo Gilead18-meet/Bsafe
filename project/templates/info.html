@@ -30,41 +30,50 @@ body{
 
 h1{
 
-	color: orange;
-	text-align: center; 
-	font-size: 100px;	
-	font-family: cursive ;
+  color: orange;
+  text-align: center; 
+  font-size: 100px; 
+  font-family: cursive ;
 
 }
 
 hr{
-	border-width: 7px;
-	border-style: hidden;
+  border-width: 7px;
+  border-style: hidden;
 }
 .slideshow-container {
 align-content: center
 
 }
+.jumbotron-wh{
+  background-color: powderblue;
+  max-width: 100%;
+  align-content: center;
+}
 .block1{
   background-color: white;
-    width: 90%;
-    border: 50px solid orange;
-    padding: 50px;
-    margin: 25px;
+    width: 100%;
+    border: 40px solid orange;
+
 
 }
 .block2{
 background-color: white;
-    width: 90%;
-    border: 50px solid orange;
-    padding: 50px;
-    margin: 25px;
+    width: 100%;
+    border: 40px solid orange;
+
 }
 .table{
   }
   
 h2{
-  align-self: right;
+  text-align: center;
+}
+
+p{
+  color:black; 
+  font-style:italic; 
+  font-size: 1.5em;
 }
 
 .numbertext{
@@ -81,6 +90,29 @@ h2{
   max-width: 45px;
 }
 
+.jumbotron-contact{
+  max-width: 50vh;
+  background-color: powderblue;
+}
+
+
+@media (max-width: 800px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  .block1{
+    background-color: white;
+      width: 100%;
+      border: 30px solid orange;
+
+
+  }
+  .block2{
+  background-color: white;
+      width: 100%;
+      border: 30px solid orange;
+
+  }  
+}
+
 </style>
 
 <a href="{{ url_for('private') }}"><img src="static/pictures/back_button.gif" width="15%" style="padding-top: 10px;"></a>
@@ -89,30 +121,35 @@ h2{
 	</div>
 
 <hr>
-    
+  
+<div class="jumbotron jumbotron-wh">    
 <div class="block1">
  <div>
 
+
 	<h2>How does it work?</h2>
 	<br>
-	<p style="color:black; font-style:italic; font-size: 18px">  Our product is a combination of a device that has a weight-scale in it and an app that are connected together. <br>The device is put inside the children&#39;s boosters, if the person driving leaves the vehicle while there is still weight on the booster, a message pops up on their phone, and if they don&#39;t confirm receiving the message, it&#39;s sent to other contacts by an escalation policy that the user customized. <br>
+	<p>  Our product is a combination of a device that has a weight-scale in it and an app that are connected together. <br>The device is put inside the children&#39;s boosters, if the person driving leaves the vehicle while there is still weight on the booster, a message pops up on their phone, and if they don&#39;t confirm receiving the message, it&#39;s sent to other contacts by an escalation policy that the user customized. <br>
 So basically, each person that has a booster with the device in it, has to install the application and connect the two together by bluetooth. The user is asked to sign up or sign in if he/she already has an account. In case the user&#39;s new and is signing up, he/she is asked to fill a form with an Email and password, and at least 2 contact numbers. They have to connect the app and device together for the first time, then they&#39;ll start connecting automatically. As you as you get to your destination and get out of the car, the bluetooth is disconnected, if there is still weight on the booster so the app will wait for 5-10 minutes, and then send a message to one of the contacts, if the contact does not confirm 
 receiving the message within 2 minutes, so the message is sent to the other contact. The app turns off when there is no weight on the booster. 
 </p>
 </div>
 </div>
+
+<hr>
 <div class="block2"> 
 <hr>
 <div>
 	<h2>Who are we?</h2> 
 	<br>
-	<p style="color:black; font-style:italic; font-size: 18px">We are a group of teenage students in a program called MEET which stands for Middle East Entrepreneurs of Tomorrow.<br> 
+	<p>We are a group of teenage students in a program called MEET which stands for Middle East Entrepreneurs of Tomorrow.<br> 
 Our task was to choose a problem and come up with the best solution, so the problem that drew our attention the most was children and babies being forgotten in vehicles, which is very common and dangerous. <br>
 Our product was designed in a way that will help reduce the possibilities of people forgetting children in vehicles. 
 </p>
 </div>
 </div>
-<br> <br> <br> 
+</div>
+
 
 <center>
  <!-- Slideshow container -->
@@ -183,18 +220,18 @@ Our product was designed in a way that will help reduce the possibilities of peo
 </div>
 <hr>
 
-
-<footer>
 	<center>
+<div class="jumbotron jumbotron-contact">
+<footer>
 	<h2>Contact Us:</h2>
 	<h3> +972 50-8956409</h3>
 	<h3>Gmail - bsafe.comp@gmail.com</h3>
 	<a href="https://www.facebook.com/Bsafe-1486809148130936/"> <h3>Facebook - Bsafe</h3> </a>
 
   <br><br>
-	<center>
 </footer>
-
+</div>
+	</center>
 
 
 
