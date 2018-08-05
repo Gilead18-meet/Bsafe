@@ -28,7 +28,7 @@ def alert(self, number, flag, phone1, phone2, phone3):
 			dest = number
 		client.messages.create(to=dest, from_=FROM, body=BODY+' '+str(self.request.id))
 		flag+=1
-		time.sleep(31)
+		time.sleep(30)
 
 def revoke(task_id):
 	app.control.revoke(task_id, terminate=True)
