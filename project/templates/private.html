@@ -65,6 +65,20 @@ button{
 	vertical-align: middle;
 }
 
+#name{
+
+	font-size: 30px;
+}
+
+#number{
+
+	font-size: 20px;
+}
+
+span{
+
+	font-size: 20px;
+}
 </style>
 
 
@@ -75,17 +89,14 @@ button{
 	<div class="col-sm-6">   
 		<div class = "row">
 			<div class="col-sm-6">
-				<img id="profile" src="{{ url_for('static', filename = 'pictures/profilepic.png')}}" height="100" width="100">
 			</div>
 			<div class="col-sm-6">
-				<span id="userid">{{session['user_id']}} {{user.id}}</span>
-
 				<form action="/private" method = "POST" >
-					<button type="submit" class="btn btn-default">BABY IN CAR</button>
 				</form>
+				<img id="profile" src="{{ url_for('static', filename = 'pictures/profilepic.png')}}" height="100" width="100">
 
-				<span id="name"> {{user.username}}</span>
-				<span id="phone">{{user.phone}}</span>
+				<span id="name"> {{user.username}}</span> 	
+				<span id="number">{{user.number}}</span>
 			</div>
 
 		</div>
@@ -96,27 +107,25 @@ button{
 	</div>
 </div>
 
-
-
 <!--  contacts -->
 <div class = "row noa">
 	  <div class="col-sm-4">
 	 	{% if user.name1 %}
-		    <span data-toggle="modal" data-target="#myModal1">Name: {{ user.name1 }}<br> Relation: {{ user.relation1 }} <br>  Phone: {{ user.phone1 }} </span>
+		    <span data-toggle="modal" data-target="#myModal1">Name: {{ user.name1 }}<br><br> Relation: {{ user.relation1 }} <br><br>  Phone: {{ user.phone1 }}</span>
 		{% else %} <!-- this contact doesn't exist in the database -->
 	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("u", "r", user.phone1, '1')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>'
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
 	 	{% if user.name2 %}
-		    <span data-toggle="modal" data-target="#myModal2">Name: {{ user.name2 }} <br> Relation: {{ user.relation2 }} <br> Phone:{{user.phone2 }}</span>
+		    <span data-toggle="modal" data-target="#myModal2">Name: {{ user.name2 }} <br> <br> Relation: {{ user.relation2 }} <br> <br>Phone:{{user.phone2 }}</span>
 		{% else %} <!-- this contact doesn't exist in the databaName: se -->
 	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name2", "user.relation2", "user.phone2", '2')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2"></button>
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
 	 	{% if user.name3 %}
-		    <span>Name: {{ user.name3 }}  <br> Relation: {{ user.relation3 }} <br>x Phone:{{ user.phone3 }}</span>
+		    <span data-toggle="modal" data-target="#myModal3"> Name: {{ user.name3 }}  <br> <br> Relation: {{ user.relation3 }} <br><br> Phone:{{ user.phone3 }}</span>
 		{% else %} <!-- this contact doesn't exist in the database -->
 	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name3", "user.relation3", "user.phone3", '3')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3"></button>
 		{% endif %}

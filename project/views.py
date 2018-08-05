@@ -37,9 +37,6 @@ def index():
 
 
 
-@app.route('/hello')
-def function():
-	return render_template ('sendmessage.html')
 
 @app.route('/info')
 def info():
@@ -63,7 +60,7 @@ def check():
 @app.route('/private', methods=['GET','POST'])
 @login_required
 def private():
-
+	
 	return redirect(url_for('account'))
 
 @app.route('/add_contact/<int:contact_num>', methods=['POST'])
