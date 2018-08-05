@@ -45,7 +45,7 @@ def info():
 @app.route('/account', methods=['GET'])
 @login_required
 def account():
-	form = AddContactForm(request.form)
+	form = AddContactForm()
 	user = User.query.filter_by(id=session['user_id']).first()
 	session['user_id'] = user.id
 	return render_template('private.html', user=user, form=form)
