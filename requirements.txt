@@ -1,4 +1,7 @@
 alembic==1.0.0
+amqp==2.3.2
+billiard==3.5.0.4
+celery==4.2.1
 certifi==2018.4.16
 chardet==3.0.4
 click==6.7
@@ -7,10 +10,11 @@ Flask-Login==0.4.1
 Flask-Migrate==2.2.1
 Flask-SQLAlchemy==2.3.1
 Flask-WTF==0.14.2
-gunicorn==19.9.0
+heroku==0.1.4
 idna==2.7
 itsdangerous==0.24
 Jinja2==2.10
+kombu==4.2.1
 Mako==1.0.7
 MarkupSafe==1.0
 psycopg2==2.7.5
@@ -19,10 +23,12 @@ PySocks==1.6.8
 python-dateutil==2.7.3
 python-editor==1.0.3
 pytz==2018.5
+redis==2.10.6
 requests==2.19.1
 six==1.11.0
 SQLAlchemy==1.2.10
-twilio==6.15.2
+twilio==6.15.1
 urllib3==1.23
+vine==1.1.4
 Werkzeug==0.14.1
 WTForms==2.2.1
