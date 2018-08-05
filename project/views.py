@@ -108,11 +108,11 @@ def booster_seat_alert(booster_seat_id):
 	if request.method == "POST":
 		user = User.query.filter_by(booster_seat_id=booster_seat_id).first()
 		user.flag = 1
-		if user.relation3:
-			revoke(user.relation3)
+		if user.task_id:
+			revoke(user.task_id)
 		task = alert.delay(user.number, user.flag, user.phone1, user.phone2, user.phone3)
 		print(type(task.id))
-		user.relation3 = str(task.id)
+		user.task_id = str(task.id)
 		db.session.commit()
 		return redirect(url_for('booster_seat_stop', booster_seat_id = booster_seat_id))
 	else:
@@ -129,11 +129,11 @@ def booster_seat_stop(booster_seat_id):
 	if request.method == 'POST':
 		user = User.query.filter_by(booster_seat_id=booster_seat_id).first()
 		user.flag = 0
-		task = user.relation3
+		task = user.task_id
 		print('before ' + task)
 		revoke(task)
 		print('revoked')
-		user.relation3 = 0
+		user.task_id = 0
 		db.session.commit()
 		return redirect(url_for('booster_seat_alert', booster_seat_id=booster_seat_id))	
 	else:

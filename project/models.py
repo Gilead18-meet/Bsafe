@@ -23,6 +23,7 @@ class User(UserMixin, db.Model):
     relation2 = db.Column(db.String, nullable=True)
     relation3 = db.Column(db.String, nullable=True)
     flag = db.Column(db.Integer, nullable=False)
+    task_id = db.Column(db.String, nullable = True)
 
     def __init__(self, username, password, number, booster_seat_id):
         self.username = username
