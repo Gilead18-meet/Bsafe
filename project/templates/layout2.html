@@ -5,6 +5,13 @@
 {% endblock %}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+
+            <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -17,6 +24,7 @@ bsafe-blue {
   color: black,
   background-color: #78b2d4   !important;
 }
+
 
 
 .resize-video {
@@ -92,16 +100,28 @@ bsafe-blue {
   </div>
 </div>
 
+<<<<<<< HEAD
 {% endif %}
+=======
+
+
+
+
+
+
+
+
+>>>>>>> 3dba3de1dae1dcf444b5dc090004cbf57af3fefb
 <!-- Header -->
 
   {% block header %}
+
   {% endblock %}
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-twothird">
+    <div >
       {% block content %}
       {% endblock %}
     </div>
