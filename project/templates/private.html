@@ -1,4 +1,4 @@
-{% extends "layout2.html" %}
+{% extends "layout.html" %}
 {% block content %}
     <!-- FOR THE MODAL STYLE -->
 <style>  /* The Modal (background) */
@@ -23,7 +23,6 @@
 
 
 .noa{
-	background: linear-gradient( to right, #6F95AD , #D9EBF5); 
 	padding-top: 30px;
 	padding-bottom: 30px;
 	padding-right: 30px;
@@ -31,13 +30,8 @@
 	text-align: center;
 }
 
-.orange{
-	background-color: #FFA400;
-	padding: 5%;
-}
-button{
 
-}
+
 .btn-warning {background-color: transparent;}
 .btn-warning {border-color: white} 
 .btn-warning {color: black;}
@@ -79,32 +73,46 @@ span{
 
 	font-size: 20px;
 }
+
+.well-lg{
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.row-top{
+	margin-right: 100px;
+}
+
+#topbg{
+	background-color: powderblue;
+}
+
+@media (max-width: 800px;){
+
+
+
+}
+
 </style>
 
 
 
 
 <!--  profile info -->
-<div class = "row" style="margin-top:100px">
-	<div class="col-sm-6">   
-		<div class = "row">
-			<div class="col-sm-6">
-			</div>
-			<div class="col-sm-6">
-				<form action="/private" method = "POST" >
-				</form>
-				<img id="profile" src="{{ url_for('static', filename = 'pictures/profilepic.png')}}" height="100" width="100">
+<div id=topbg>
+<div class="well well-lg"></div>
+				
+			<div class="row row-top">
+				<div class="col-sm-6"></div>
+				<div class="col-sm-4">
 
-				<span id="name"> {{user.username}}</span> 	
+				<span id="name"> {{user.username}}</span>
+				<br>
 				<span id="number">{{user.number}}</span>
-			</div>
+				</div>
 
-		</div>
-	</div>
-	<div class="col-sm-6">
-		<h1><a href="{{ url_for('users.login') }}">LOG OUT</a></h1>
-		<h2><a href="{{ url_for('info') }}">INFORMATION!</a></h2>
-	</div>
+				<h1><a href="{{ url_for('users.login') }}">LOG OUT</a></h1>
+			</div>
 </div>
 
 <!--  contacts -->
@@ -132,19 +140,6 @@ span{
 	  </div>
 </div>
 
-
-<div class="row orange">
-	  <div class="col-sm-4 links">
-	  	<button class="btn btn-sm btn-warning" onclick="window.alert('a call has been sent to the police department');"" type="police"><a href="tel:+9720529553327"></a> Police Department</button>
-	  </div>
-
-	 <div class="col-sm-4 links">
-	 	<button class="btn btn-sm btn-warning" onclick="window.alert('a call has been sent to MDA');"" type="Mda"><a href="tel:+9720529553327"></a> MDA</button>
-	  </div>
-	<div class="col-sm-4 links">
-		<button class="btn btn-sm btn-warning" onclick="window.alert('a call has been sent to the fire department');"" type="fire"><a href="tel:+9720529553327"></a> fire Department</button>
-	 </div>
-</div>
 
 
 
