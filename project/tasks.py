@@ -13,7 +13,7 @@ app = Celery('tasks', broker='redis://localhost' )
 
 @app.task(bind = True)
 def alert(self, number, flag, phone1, phone2, phone3):
-	print('here')
+	print('hereWEASDADASDJKASLDJASKLDJSAKLDJASKLDJASKLDJASKLDJASKLDJASDKLKASDJASKDLK')
 	dest = number
 	while True:
 		client = Client(ACC_SID, AUTH_TOKEN)
@@ -24,11 +24,14 @@ def alert(self, number, flag, phone1, phone2, phone3):
 		elif flag == 4 and phone3:
 			dest = phone3
 		elif flag == 5:
-			flag = 1
-			dest = number
+			flag = 0
+			break 
 		client.messages.create(to=dest, from_=FROM, body=BODY+' '+str(self.request.id))
 		flag+=1
+		print (flag)
+		print ('FLAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG') 
 		time.sleep(30)
+	return 
 
 def revoke(task_id):
 	app.control.revoke(task_id, terminate=True)
