@@ -9,9 +9,17 @@
 
 <style>
 
+b{
+  color: white;
+}
+
+h2{
+  color: white;
+}
+
 body {
   height: 100vh;
-  overflow-y: hidden;
+
 }
 
 
@@ -38,6 +46,9 @@ body {
 @media (max-width: 600px) {
   /* CSS that should be displayed if width is equal to or less than 800px goes here */
 
+b{
+   color: white;
+}
 
   #login { 
     top: 0px;
@@ -96,9 +107,9 @@ body {
           <h2> Log In:</h2> 
           <form action="{{ url_for('users.login') }}" method="post">
             {{ form.csrf_token }}
-            {{ form.username(class="form-hello", placeholder="Username:") }} 
+            <b>Username: </b>{{ form.username(class="form-hello") }} 
             <br>
-            {{ form.password(class="form-hello1", placeholder="Password:") }}
+            <b>Password: </b>{{ form.password(class="form-hello1") }}
 
             <br> <br>
             <button class="btn btn-sm btn-warning" type="submit">ENTER </button>
