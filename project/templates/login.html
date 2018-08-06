@@ -107,9 +107,9 @@ b{
           <h2> Log In:</h2> 
           <form action="{{ url_for('users.login') }}" method="post">
             {{ form.csrf_token }}
-            <b>Username: </b>{{ form.username(class="form-hello") }} 
-            <br>
-            <b>Password: </b>{{ form.password(class="form-hello1") }}
+            <b>Username: </b>{{ form.username(class="form-hello",  placeholder="Username:") }} 
+            <br><br>
+            <b>Password: </b>{{ form.password(class="form-hello1", placeholder="Password:") }}
 
             <br> <br>
             <button class="btn btn-sm btn-warning" type="submit">ENTER </button>
