@@ -1,4 +1,4 @@
-{% extends "layout2.html" %}
+{% extends "layout.html" %}
 {% block content %}
     <!-- FOR THE MODAL STYLE -->
 <style>  /* The Modal (background) */
@@ -105,9 +105,6 @@ span{
 			<div class="row row-top">
 				<div class="col-sm-6"></div>
 				<div class="col-sm-4">
-				<div class="col-sm-2">
-				<img src="{{ url_for('static', filename = 'logosmall1.png')}}" height="250" width="250">
-				</div>
 
 				<span id="name"> {{user.username}}</span>
 				<br>
