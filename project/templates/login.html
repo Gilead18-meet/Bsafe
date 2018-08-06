@@ -15,49 +15,43 @@ body {
 }
 
 .container {
-    background-image: url( {{ url_for('static', filename = 'pictures/homepicture2.png') }});
-    background-repeat:no-repeat;
-    background-size: 200%;
-    background-position: center; 
-    height: 100%;
-    width: 100%;
-}   
-#logo{
-  width: 300px;
-}
 
-#logodiv{
-  left: 9vh;
-}
+}   
+
 
 #login{
   top: 150px; 
   right: 20vh;
+  background-color: #78b2d4;
 }
+
+.well-sm{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.well-lg{
+  background-color: transparent;
+  border-color: #78b2d4;
+}
+
+#aroundcolor{
+  background-color: #78b2d4;
+}
+  
 
 
 @media (max-width: 750px) {
   /* CSS that should be displayed if width is equal to or less than 800px goes here */
   .container {
-    background-image: url( {{ url_for('static', filename = 'pictures/homepicture2.png') }});
 
-    width: 200%;
-    background-repeat:no-repeat;
-    background-size: 200vh;
-    background-position: center; 
   } 
 
-  #logo{
-    width: 40%;
-  }
-
-  #logodiv{
-    left: -5vh;
-  }
 
   #login { 
     top: 0px;
     right: 0;
+    background-color: #78b2d4;    
   }
   
 }
@@ -75,27 +69,24 @@ body {
 
 
 }
-.btn-warning {background-color: #FFA400}
-.btn-warning {border-color: #FFA400} 
+.btn-warning {background-color: orange}
+.btn-warning {border-color: orange} 
 .btn-warning {color: black;}
 .btn-warning{font-weight: bold;}
 .btn-warning{font-size: 15px;}
 
-p{
-
-  color: blue;
-  font-size: 20px;} 
-
-p1{
-
-  color:blue;
-  font-size: 20px;
+.well-sm{
+  background-color: transparent;
+  border-color: transparent;
 }
-p2{
-  
-  color:blue;
-  font-weight: bold;
-  font-size: 25px;
+
+.well-lg{
+  background-color: transparent;
+  border-color: #78b2d4;
+}
+
+#aroundcolor{
+  background-color: #78b2d4;
 }
   
 /*  h2{ 
@@ -108,14 +99,13 @@ p2{
   */
 </style>
 
-<div class="container" style="max-width: 960px">
-<a href="{{ url_for('info') }}"><img src="static/pictures/info_button.gif" width="15%" style="padding-top: 1%;"></a>
-  <div class="row">
-    <div class="col-sm-4" id="logodiv"> 
-      <img src="{{ url_for('static', filename = 'pictures/logosmall1.png')}}" id="logo" >
-    	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </div>
-    <div class="col-sm-8" id="login">
+
+  <center>
+    <div class="well well-sm"></div><div class="well well-sm"></div>
+
+  <div id="aroundcolor">  
+    <div class="well well-lg"></div><div class="well well-lg"></div>
+    <div id="login">
           <h2> Log In:</h2> 
           <form action="{{ url_for('users.login') }}" method="post">
             {{ form.csrf_token }}
@@ -123,16 +113,11 @@ p2{
             <br>
             {{ form.password(class="form-hello1", placeholder="Password:") }}
 
-            <br>
+            <br> <br>
             <button class="btn btn-sm btn-warning" type="submit">ENTER </button>
           </form>
-    
-
-           <p>Don't have an account?</p>
-           <p1> Create one</p1>
-           <p2> <a href="{{url_for('users.register')}}"> HERE</a></p2>
       </div>
-    </div>
-  </div>
-	
+    <div class="well well-lg"></div><div class="well well-lg"></div>
+    </div>  
+	</center>
 {% endblock %}

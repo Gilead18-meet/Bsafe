@@ -1,5 +1,5 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout2.html" %}
+
     <!-- FOR THE MODAL STYLE -->
 <style>  /* The Modal (background) */
 
@@ -96,6 +96,7 @@ span{
 </style>
 
 
+{% block header %}
 
 
 <!--  profile info -->
@@ -115,7 +116,13 @@ span{
 			</div>
 </div>
 
+
+{% endblock %}
+
+
+{% block content %}
 <!--  contacts -->
+  <header class="w3-container w3-blue w3-center" style="padding:128px 16px">
 <div class = "row noa">
 	  <div class="col-sm-4">
 	 	{% if user.name1 %}
@@ -141,6 +148,7 @@ span{
 </div>
 
 
+    </header>
 
 
 <!-- Modal -->
@@ -250,25 +258,25 @@ span{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
