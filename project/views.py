@@ -33,10 +33,12 @@ BODY = "YOUR BABY MIGHT BE IN DANGER! CHECK YOUR CAR!"
 
 @app.route('/')
 def index():
-	return render_template('landingpagenew.html')
+	return render_template('landingpage.html')
 
 
-
+@app.route('/team')
+def team():
+    return render_template('team.html')
 
 @app.route('/info')
 def info():
