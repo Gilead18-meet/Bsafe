@@ -1,5 +1,7 @@
 {% extends "layout2.html" %}
 
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
     <!-- FOR THE MODAL STYLE -->
 <style>  /* The Modal (background) */
 
@@ -72,6 +74,7 @@
 span{
 
 	font-size: 20px;
+
 }
 
 .well-lg{
@@ -83,7 +86,7 @@ span{
 	margin-right: 100px;
 }
 
-#topbg{
+.well-lg{
 	background-color: powderblue;
 }
 
@@ -98,10 +101,11 @@ span{
 
 {% block header %}
 
-
+<header class="w3-container w3-blue w3-center" style="padding:12px 16px">
 <!--  profile info -->
 <div id=topbg>
-<div class="well well-lg"></div>
+
+<img src="{{ url_for('static', filename = 'pictures/profilepic2.png')}}" height="150" width="150" style="margin ">
 				
 			<div class="row row-top">
 				<div class="col-sm-6"></div>
@@ -112,9 +116,10 @@ span{
 				<span id="number">{{user.number}}</span>
 				</div>
 
-				<h1><a href="{{ url_for('users.login') }}">LOG OUT</a></h1>
 			</div>
 </div>
+</header>
+
 
 
 {% endblock %}
@@ -122,34 +127,33 @@ span{
 
 {% block content %}
 <!--  contacts -->
-  <header class="w3-container w3-blue w3-center" style="padding:128px 16px">
+
 <div class = "row noa">
 	  <div class="col-sm-4">
 	 	{% if user.name1 %}
 		    <span data-toggle="modal" data-target="#myModal1">Name: {{ user.name1 }}<br><br> Relation: {{ user.relation1 }} <br><br>  Phone: {{ user.phone1 }}</span>
 		{% else %} <!-- this contact doesn't exist in the database -->
-	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("u", "r", user.phone1, '1')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>'
+	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("u", "r", user.phone1, '1')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1" style="background-color:#fff" ></button>'
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
 	 	{% if user.name2 %}
 		    <span data-toggle="modal" data-target="#myModal2">Name: {{ user.name2 }} <br> <br> Relation: {{ user.relation2 }} <br> <br>Phone:{{user.phone2 }}</span>
 		{% else %} <!-- this contact doesn't exist in the databaName: se -->
-	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name2", "user.relation2", "user.phone2", '2')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2"></button>
+	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name2", "user.relation2", "user.phone2", '2')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2" style="background-color:#fff"></button>
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
 	 	{% if user.name3 %}
 		    <span data-toggle="modal" data-target="#myModal3"> Name: {{ user.name3 }}  <br> <br> Relation: {{ user.relation3 }} <br><br> Phone:{{ user.phone3 }}</span>
 		{% else %} <!-- this contact doesn't exist in the database -->
-	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name3", "user.relation3", "user.phone3", '3')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3"></button>
+	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name3", "user.relation3", "user.phone3", '3')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3" style="background-color:#fff"></button>
 		{% endif %}
 	  </div>
 </div>
 
 
-    </header>
-
+    
 
 <!-- Modal -->
 <div id="myModal1" class="modal fade" role="dialog">
@@ -250,7 +254,12 @@ span{
 
   </div>
 </div>	
-
+<br>
+<center>
+<h3>
+* If nore you or these three contacts approve the notification, <br> we will be contacting the police to check the car.
+</h3>
+</center>
 </div>
 
 
