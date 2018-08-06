@@ -71,6 +71,8 @@
 	font-size: 20px;
 }
 
+
+
 span{
 
 	font-size: 20px;
@@ -111,7 +113,7 @@ span{
 					<div class="col-md-6">
 						<img src="{{ url_for('static', filename = 'pictures/profilepic2.png')}}" height="150" width="150">
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6"> <br><br>
 						<span id="name"> {{user.username}}</span> <br>
 						<span id="number">{{user.number}}</span>
 					</div>
@@ -133,6 +135,7 @@ span{
 
 <div class = "row noa">
 	  <div class="col-sm-4">
+
 	 	{% if user.name1 %}
 		    <span data-toggle="modal" data-target="#myModal1">Name: {{ user.name1 }}<br><br> Relation: {{ user.relation1 }} <br><br>  Phone: {{ user.phone1 }}</span>
 		{% else %} <!-- this contact doesn't exist in the database -->
@@ -168,18 +171,20 @@ span{
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
+      	<center>
         <p>These contacts are here to help you. In case you don't approve the alert sent, we will be contacting these contacts by order. </p>
+        </center>
 		<form action="/add_contact/1" method="post">
 		    {{ form.csrf_token }}
-
-		    Name: <input type="text" name="name1" value="{{ user.name1 }}"> <br> <br>
- 			Relation: <input type="text" name="relation1" value="{{ user.relation1 }}"> <br> <br>
- 			Phone: <input type="text" name="phone1" value="{{ user.phone1 }}" placeholder="+972xxxxxxxxx">
-
- 			<input type="hidden" name="contact_num" value="">
-		    <br>
 		    <center>
-		    <button class="btn btn-sm btn-warning"  type="submit">SUBMIT </button>
+		    Name: <input type="text" name="name1" placeholder="Name"> <br> <br>
+ 			Relation: <input type="text" name="relation1" placeholder="Relation"> <br> <br>
+ 			Phone: <input type="text" name="phone1"  placeholder="+972xxxxxxxxx">
+ 			</center>
+ 			<input type="hidden" name="contact_num" value="">
+		    <br><br>
+		    <center>
+		    <button class="btn btn-sm btn-warning"  type="submit">ADD </button>
 		    </center>
 		  </form>
 
@@ -201,18 +206,20 @@ span{
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
+      	<center>
         <p>These contacts are here to help you. In case you don't approve the alert sent, we will be contacting these contacts by order. </p>
+    </center>
 		<form action="/add_contact/2" method="post">
 		    {{ form.csrf_token }}
-
-		    Name: <input type="text" name="name2" value="{{ user.name2 }}"> <br> <br>
- 			Relation: <input type="text" name="relation2" value="{{ user.relation2 }}"> <br> <br>
- 			Phone: <input type="text" name="phone2" value="{{ user.phone2 }}" placeholder="+972xxxxxxxxx">
-
- 			<input type="hidden" name="contact_num" value="">
-		    <br>
 		    <center>
-		    <button class="btn btn-sm btn-warning"  type="submit">SUBMIT </button>
+		    Name: <input type="text" name="name2" placeholder="Name" > <br> <br>
+ 			Relation: <input type="text" name="relation2" placeholder="Relation"> <br> <br>
+ 			Phone: <input type="text" name="phone2" placeholder="+972xxxxxxxxx">
+ 			</center>
+ 			<input type="hidden" name="contact_num" value="">
+		    <br><br>
+		    <center>
+		    <button class="btn btn-sm btn-warning"  type="submit">ADD </button>
 		    </center>
 		  </form>
 
@@ -234,36 +241,35 @@ span{
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
+      	<center>
         <p>These contacts are here to help you. In case you don't approve the alert sent, we will be contacting these contacts by order. </p>
+    </center>
 		<form action="/add_contact/3" method="post">
 		    {{ form.csrf_token }}
-
-		    Name: <input type="text" name="name3" value=""> <br> <br>
- 			Relation: <input type="text" name="relation3" value=""> <br> <br>
- 			Phone: <input type="text" name="phone3" value="" placeholder="+972xxxxxxxxx">
-
- 			<input type="hidden" name="contact_num" value="">
-		    <br>
 		    <center>
-		    <button class="btn btn-sm btn-warning"  type="submit">SUBMIT </button>
+		    Name: <input type="text" name="name3" placeholder="Name"> <br> <br>
+ 			Relation: <input type="text" name="relation3" placeholder="Relation"> <br> <br>
+ 			Phone: <input type="text" name="phone3" placeholder="+972xxxxxxxxx">
+ 			</center>
+ 			<input type="hidden" name="contact_num" value="">
+		    <br><br>
+		    <center>
+		    <button class="btn btn-sm btn-warning"  type="submit">ADD </button>
 		    </center>
 		  </form>
 
       </div> 
       <div class="modal-footer">
-
       </div>
     </div>
-
   </div>
 </div>	
-<br>
 <center>
-<h3>
+<h3  style=" margin-top: 150px; margin-bottom: -40px;" > 
 * If neither you or these three contacts approve the notification, <br> we will contact the police in order for them tox check the car.
 </h3>
 </center>
-</div>
+
 
 
 
