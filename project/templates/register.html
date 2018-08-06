@@ -103,22 +103,32 @@ float: right;
     to {transform: scale(1)}
 } 
 
+
+.row{
+  background-color: #78B2D4;
+  padding-bottom: 10px;
+}
+
+.signup_form_label{
+
+  font-family: garamond;
+  color: white; 
+}
 </style>
 
 <!--!<1<a href="{{ url_for('users.login') }}"><img class="fa fa-anchor w3-padding-64 w3-text-red src="static/pictures/back_button.gif" width="15%" style="padding-top: 10px;"></a>-->
 
 <div class='container'>
-	<div class='row'>
-		<h1>SIGN UP</h1> <br> <br> <br> 
-	</div>
 <center>
 
+  <br><br><br><br><br><br><br><br>
 
 	<div class='row'>
-		<img src="{{ url_for('static', filename = 'pictures/LOGO1080.png')}}" align= "left" height="300" width="300"> 
   <table>
+  
 		 <form action="/register" method = "POST" >
-		<br><br><br>
+		<br>
+
      <tr colspan="2">
       <div class="form-group">
          <td> <label class="signup_form_label" for="username"><b>Username  : </b></label></td>
@@ -151,7 +161,7 @@ float: right;
 		    </div>
       </tr>
   </table>
-		     <button type="submit" class="btn btn-default">Submit</button>
+		     <button type="submit" class="btn btn-default">SIGNUP</button>
 		  </form> 
 
 </center>
