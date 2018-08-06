@@ -14,10 +14,6 @@ body {
   overflow-y: hidden;
 }
 
-.container {
-
-}   
-
 
 #login{
   top: 150px; 
@@ -25,27 +21,22 @@ body {
   background-color: #78b2d4;
 }
 
-.well-sm{
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.well-lg{
-  background-color: transparent;
+.well{
+  background-color: #78b2d4;
   border-color: #78b2d4;
 }
 
+
 #aroundcolor{
   background-color: #78b2d4;
+  background-image: url( {{ url_for('static', filename = '../static/pictures/homepicture2.png') }});
+
 }
   
 
 
-@media (max-width: 750px) {
+@media (max-width: 600px) {
   /* CSS that should be displayed if width is equal to or less than 800px goes here */
-  .container {
-
-  } 
 
 
   #login { 
@@ -75,15 +66,11 @@ body {
 .btn-warning{font-weight: bold;}
 .btn-warning{font-size: 15px;}
 
-.well-sm{
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.well-lg{
-  background-color: transparent;
+.well{
+  background-color: #78b2d4;
   border-color: #78b2d4;
 }
+
 
 #aroundcolor{
   background-color: #78b2d4;
@@ -100,11 +87,11 @@ body {
 </style>
 
 
-  <center>
-    <div class="well well-sm"></div><div class="well well-sm"></div>
+<center>
+    <br><br><br><br><br><br><br><br><br><br>
 
   <div id="aroundcolor">  
-    <div class="well well-lg"></div><div class="well well-lg"></div>
+    <br><br><br><br><br><br><br><br>
     <div id="login">
           <h2> Log In:</h2> 
           <form action="{{ url_for('users.login') }}" method="post">
@@ -117,7 +104,7 @@ body {
             <button class="btn btn-sm btn-warning" type="submit">ENTER </button>
           </form>
       </div>
-    <div class="well well-lg"></div><div class="well well-lg"></div>
-    </div>  
-	</center>
+      <br><br><br><br><br><br><br><br>
+    </div>
+</center>
 {% endblock %}

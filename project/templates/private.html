@@ -102,22 +102,25 @@ span{
 {% block header %}
 
 <header class="w3-container w3-blue w3-center" style="padding:12px 16px">
-<!--  profile info -->
-<div id=topbg>
-
-<img src="{{ url_for('static', filename = 'pictures/profilepic2.png')}}" height="150" width="150" style="margin ">
-				
-			<div class="row row-top">
-				<div class="col-sm-6"></div>
-				<div class="col-sm-4">
-
-				<span id="name"> {{user.username}}</span>
-				<br>
-				<span id="number">{{user.number}}</span>
+	<!--  profile info -->
+	<div id="topbg">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="{{ url_for('static', filename = 'pictures/profilepic2.png')}}" height="150" width="150">
+					</div>
+					<div class="col-md-6">
+						<span id="name"> {{user.username}}</span> <br>
+						<span id="number">{{user.number}}</span>
+					</div>
 				</div>
-
 			</div>
-</div>
+			<div class="col-md-4"></div>
+
+		</div>
+	</div>
 </header>
 
 
@@ -257,7 +260,7 @@ span{
 <br>
 <center>
 <h3>
-* If nore you or these three contacts approve the notification, <br> we will be contacting the police to check the car.
+* If neither you or these three contacts approve the notification, <br> we will contact the police in order for them tox check the car.
 </h3>
 </center>
 </div>
