@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
 {% block content %}
     <!-- FOR THE MODAL STYLE -->
 <style>  /* The Modal (background) */
@@ -111,7 +111,7 @@ span{
 				<span id="number">{{user.number}}</span>
 				</div>
 
-				<h1><a href="{{ url_for('users.login') }}">LOG OUT</a></h1>
+				<h1><a href="{{ url_for('users.logout') }}">LOG OUT</a></h1>
 			</div>
 </div>
 
