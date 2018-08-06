@@ -4,7 +4,7 @@
 
 {% block header %}
   <header class="w3-container w3-blue w3-center" style="padding:128px 16px">
-      <video class="resize" height="100%" width="100%" controls>
+      <video class="resize-video" height="100%" width="100%" controls>
         <source src="static/videos/Untitled.mp4" type="video/mp4">
       </video>
     </header>
@@ -12,11 +12,43 @@
 {%endblock%} 
 
 {% block content %}
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
       <h1>Who are we?</h1>
-      <h5 class="w3-padding-32">We are B-Safe, the problem of babies being forgotten in cars has been a growing problem. In the last 10 years there have been over 650 cases of babies being forggoten in cars in Ireal alone.</h5>
+      <h5 class="w3-padding-32">We are B-Safe. The problem of babies being forgotten in cars has been a growing problem. In the last 10 years there have been over 650 cases of babies being forggoten in cars in Isreal alone.<br><br>
+      Our product is a combination of a device that has a weight-scale and an app, that are connected together via bluetooth. If the person driving leaves the vehicle while there is still weight on the booster, a message pops up on their phone.<br><br> We sell our device to saftey-seat companies (business to buisness). This way our product is an extra layer of security that comes with an already essential product. </h5>
 
-      <p class="w3-text-grey">Our product is a combination of a device that has a weight-scale and an app that are connected together via bluetooth. If the person driving leaves the vehicle while there is still weight on the booster, a message pops up on their phone. We are business to buisness and sell our device to saftey-seat companies. This way our product is an extra layer of security that comes with an already essential product </p>
-    </div>
+      <p class="w3-text-grey">We are a group of teenage entrepreneurs who are particicpating in the "MEET" program, which gave us the opportunity to create this startup. <br> To learn more about us, click the TEAM button on the navigation bar</p>
+</div>
+
+
+ <div class="w3-third w3-center">
+
+<br>
+
+	<img class="resize-img" src="static/pictures/LOGO1080.png"> </img> 
+</div>
 
 {%endblock%} 
+
+
+{% block content2 %}
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>How it works</h1>
+      <h5 class="w3-padding-32">We are B-Safe. The problem of babies being forgotten in cars has been a growing problem. In the last 10 years there have been over 650 cases of babies being forggoten in cars in Isreal alone.<br><br>
+      Our product is a combination of a device that has a weight-scale and an app, that are connected together via bluetooth. If the person driving leaves the vehicle while there is still weight on the booster, a message pops up on their phone.<br><br> We sell our device to saftey-seat companies (business to buisness). This way our product is an extra layer of security that comes with an already essential product. </h5>
+
+      <p class="w3-text-grey">We are a group of teenage entrepreneurs who are particicpating in the "MEET" program, which gave us the opportunity to create this startup. <br> To learn more about us, click the TEAM button on the navigation bar</p>
+
+
+      
+</div> 
+
+
+
+{% endblock %}
 
