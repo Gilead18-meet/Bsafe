@@ -61,6 +61,10 @@
 	vertical-align: middle;
 }
 
+.username{
+
+	font-weight: bold;
+}
 #name{
 
 	font-size: 30px;
@@ -72,8 +76,12 @@
 }
 
 span{
+	font-family: "Comic Sans MS", cursive, sans-serif;
 
-	font-size: 20px;
+	
+
+
+
 
 }
 
@@ -134,21 +142,23 @@ span{
 <div class = "row noa">
 	  <div class="col-sm-4">
 	 	{% if user.name1 %}
-		    <span data-toggle="modal" data-target="#myModal1">Name: {{ user.name1 }}<br><br> Relation: {{ user.relation1 }} <br><br>  Phone: {{ user.phone1 }}</span>
+	 	
+		    <span data-toggle="modal" data-target="#myModal1" style="font-size: 35px" style="font"><b> {{ user.name1 }}</span></b> <br><br><br> <span data-toggle="modal" data-target="#myModal1">{{ user.relation1 }} <br><br> {{ user.phone1 }}</span>
+		  
 		{% else %} <!-- this contact doesn't exist in the database -->
 	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("u", "r", user.phone1, '1')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1" style="background-color:#fff" ></button>'
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
 	 	{% if user.name2 %}
-		    <span data-toggle="modal" data-target="#myModal2">Name: {{ user.name2 }} <br> <br> Relation: {{ user.relation2 }} <br> <br>Phone:{{user.phone2 }}</span>
+		    <span data-toggle="modal" data-target="#myModal2" style="font-size: 35px"> <b>{{ user.name2 }} </b></span>  <br><br><br> <span data-toggle="modal" data-target="#myModal2">{{ user.relation2 }} <br> <br> {{user.phone2 }}</span>
 		{% else %} <!-- this contact doesn't exist in the databaName: se -->
 	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name2", "user.relation2", "user.phone2", '2')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2" style="background-color:#fff"></button>
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
 	 	{% if user.name3 %}
-		    <span data-toggle="modal" data-target="#myModal3"> Name: {{ user.name3 }}  <br> <br> Relation: {{ user.relation3 }} <br><br> Phone:{{ user.phone3 }}</span>
+		    <span data-toggle="modal" data-target="#myModal3" style="font-size: 35px"> <b>{{ user.name3 }} </b></span> <br><br><br> <span data-toggle="modal" data-target="#myModal3">{{ user.relation3 }} <br><br> {{ user.phone3 }}</span>
 		{% else %} <!-- this contact doesn't exist in the database -->
 	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name3", "user.relation3", "user.phone3", '3')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3" style="background-color:#fff"></button>
 		{% endif %}
@@ -168,14 +178,16 @@ span{
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
+      <center>
         <p>These contacts are here to help you. In case you don't approve the alert sent, we will be contacting these contacts by order. </p>
+      </center>
 		<form action="/add_contact/1" method="post">
 		    {{ form.csrf_token }}
-
+		    <center>
 		    Name: <input type="text" name="name1" value="{{ user.name1 }}"> <br> <br>
  			Relation: <input type="text" name="relation1" value="{{ user.relation1 }}"> <br> <br>
  			Phone: <input type="text" name="phone1" value="{{ user.phone1 }}" placeholder="+972xxxxxxxxx">
-
+ 			</center>
  			<input type="hidden" name="contact_num" value="">
 		    <br>
 		    <center>
@@ -201,14 +213,16 @@ span{
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
+      <center>
         <p>These contacts are here to help you. In case you don't approve the alert sent, we will be contacting these contacts by order. </p>
+      </center>
 		<form action="/add_contact/2" method="post">
 		    {{ form.csrf_token }}
-
+		    <center>
 		    Name: <input type="text" name="name2" value="{{ user.name2 }}"> <br> <br>
  			Relation: <input type="text" name="relation2" value="{{ user.relation2 }}"> <br> <br>
  			Phone: <input type="text" name="phone2" value="{{ user.phone2 }}" placeholder="+972xxxxxxxxx">
-
+ 			</center>
  			<input type="hidden" name="contact_num" value="">
 		    <br>
 		    <center>
@@ -234,14 +248,16 @@ span{
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
+      <center>
         <p>These contacts are here to help you. In case you don't approve the alert sent, we will be contacting these contacts by order. </p>
+      </center>
 		<form action="/add_contact/3" method="post">
 		    {{ form.csrf_token }}
-
+		    <center>
 		    Name: <input type="text" name="name3" value=""> <br> <br>
  			Relation: <input type="text" name="relation3" value=""> <br> <br>
  			Phone: <input type="text" name="phone3" value="" placeholder="+972xxxxxxxxx">
-
+ 			</center>
  			<input type="hidden" name="contact_num" value="">
 		    <br>
 		    <center>
