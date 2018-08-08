@@ -8,7 +8,6 @@ import os
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_pyfile('flask.cfg')
-
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -31,5 +30,6 @@ app.register_blueprint(users_bp)
 
 # General views
 from . import views
+
 
 # db.create_all()
