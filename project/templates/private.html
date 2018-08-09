@@ -102,8 +102,9 @@ span{
 
 @media (max-width: 800px;){
 
+.{
 
-
+	font-size: 50px;
 }
 
 </style>
@@ -122,8 +123,8 @@ span{
 						<img src="{{ url_for('static', filename = 'pictures/profilepic2.png')}}" height="150" width="150">
 					</div>
 					<div class="col-md-6"> <br><br>
-						<span id="name"> {{user.username}}</span> <br>
-						<span id="number">{{user.number}}</span>
+						<span id="name" style="font-size: 30px"> {{user.username}}</span> <br>
+						<span id="number" style="font-size: 30px">{{user.number}}</span>
 					</div>
 				</div>
 			</div>
@@ -141,29 +142,33 @@ span{
 {% block content %}
 <!--  contacts -->
 
-<div class = "row noa">
-	  <div class="col-sm-4">
+<div class = "hello">
+	  <div class="col-sm-4" style="border-">
 
 	 	{% if user.name1 %}
 	 	
-		    <span data-toggle="modal" data-target="#myModal1" style="font-size: 35px" style="font"><b> {{ user.name1 }}</span></b> <br><br><br> <span data-toggle="modal" data-target="#myModal1">{{ user.relation1 }} <br><br> {{ user.phone1 }}</span>
+		    <span 	style="font-size: 35px" style="font"><b> {{ user.name1 }} </span></b> <br><br><br> <span style="font-size: 20px">{{ user.relation1 }} <br><br> {{ user.phone1 }}<br><br><button class="btn btn-sm btn-warning"  data-toggle="modal" data-target="#myModal1" style="font-size: 17px">Edit</button></span>
 		  
 		{% else %} <!-- this contact doesn't exist in the database -->
-	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("u", "r", user.phone1, '1')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1" style="background-color:#fff" ></button>'
+	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="300" width="315	" onclick="prefill_modal("u", "r", user.phone1, '1')" type="button"	data-toggle="modal" data-target="#myModal1" style="background-color:#fff"></button>'
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
+
 	 	{% if user.name2 %}
-		    <span data-toggle="modal" data-target="#myModal2" style="font-size: 35px"> <b>{{ user.name2 }} </b></span>  <br><br><br> <span data-toggle="modal" data-target="#myModal2">{{ user.relation2 }} <br> <br> {{user.phone2 }}</span>
-		{% else %} <!-- this contact doesn't exist in the databaName: se -->
-	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name2", "user.relation2", "user.phone2", '2')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2" style="background-color:#fff"></button>
+		    <span 	style="font-size: 35px" style="font"><b> {{ user.name2 }}</span></b> <br><br><br> <span style="font-size: 20px">{{ user.relation2 }} <br><br> {{ user.phone2 }}<br><br> <button class="btn btn-sm btn-warning"  data-toggle="modal" data-target="#myModal2" style="font-size: 17px">Edit</button></span>
+		  
+		{% else %} <!-- this contact doesn't exist in the database -->
+	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="300" width="315	" onclick="prefill_modal("u", "r", user.phone2, '2')" type="button"	 data-toggle="modal" data-target="#myModal2" style="background-color:#fff" ></button>'
 		{% endif %}
 	  </div>
 	  <div class="col-sm-4">
+
 	 	{% if user.name3 %}
-		    <span data-toggle="modal" data-target="#myModal3" style="font-size: 35px"> <b>{{ user.name3 }} </b></span> <br><br><br> <span data-toggle="modal" data-target="#myModal3">{{ user.relation3 }} <br><br> {{ user.phone3 }}</span>
+		    <span 	style="font-size: 35px" style="font"><b> {{ user.name3 }}</span></b> <br><br><br> <span style="font-size: 20px">{{ user.relation3 }} <br><br> {{ user.phone3 }} <br><br> <button class="btn btn-sm btn-warning"  data-toggle="modal" data-target="#myModal3" style="font-size: 17px" style="">Edit</button></span>
+		  
 		{% else %} <!-- this contact doesn't exist in the database -->
-	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="250" width="250" onclick="prefill_modal("user.name3", "user.relation3", "user.phone3", '3')" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3" style="background-color:#fff"></button>
+	  	    <img src="{{ url_for('static', filename = 'pictures/addcontact.png')}}" height="300" width="315	" onclick="prefill_modal("u", "r", user.phone3, '3')" type="button"	 data-toggle="modal" data-target="#myModal3" style="background-color:#fff" ></button>'
 		{% endif %}
 	  </div>
 </div>
@@ -280,9 +285,11 @@ span{
     </div>
   </div>
 </div>	
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <center>
-<h3  style=" margin-top: 150px; margin-bottom: -40px;" > 
-* If neither you or these three contacts approve the notification, <br> we will contact the police in order for them tox check the car.
+<h3 > 
+* If neither you or these three contacts approve the notification, <br> we will contact the police in order for them to check the car.
 </h3>
 </center>
 
@@ -290,27 +297,4 @@ span{
 
 
 
-
-
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
